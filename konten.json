@@ -247,5 +247,11 @@
   "jamBukaGoogle": [
     "Mo-Fr 08:00-20:00",
     "Sa 08:00-18:00"
-  ]
+  ],
+  "chatbot": {
+    "aktif": true,
+    "server": "https://tanya-situs.vercel.app",
+    "botId": "LE_cd_V5HPHg",
+    "label": "Tanya kami"
+  }
 }

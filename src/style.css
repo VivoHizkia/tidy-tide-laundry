@@ -649,6 +649,12 @@ mark.isi {
   box-shadow: 0 8px 20px rgba(26, 36, 80, 0.3);
 }
 
+/* With the chatbot on, its button takes the bottom-right corner. */
+.ada-chatbot .wa-melayang {
+  right: auto;
+  left: 16px;
+}
+
 @media (max-width: 640px) {
   .atas nav a:not(.tombol) {
     display: none;

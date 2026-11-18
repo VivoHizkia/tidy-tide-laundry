@@ -1,17 +1,17 @@
 /* Tidy Tide Laundry
-   Two ideas carry the page: the tide (the teal opening with its wave edge) and the laundry
-   receipt (the price list printed as a nota with a torn edge and dotted leaders).
-   Everything else stays quiet. */
+   Colours are taken from the logo. Two ideas carry the page: the tide (the navy opening with
+   its two-layer wave, echoing the water in the logo's washing machine) and the laundry receipt
+   (prices printed as nota slips with torn edges and dotted leaders). Everything else is quiet. */
 
 :root {
-  --air: #eef5f4; /* page background, the colour of clean water */
-  --tide: #17707a; /* brand teal */
-  --tide-deep: #0f525a;
-  --ink: #10293a; /* text */
-  --muted: #4a6270;
-  --sun: #f4c543; /* the one warm accent: action buttons */
-  --paper: #ffffff;
-  --rule: #cfe0de;
+  --krem: #fffcf2; /* page background, the logo's machine body */
+  --navy: #1a2450; /* text and the opening */
+  --navy-dalam: #121a3c;
+  --tan: #c9b58f; /* the logo's frame and sparkles: rules and small accents */
+  --biru: #b2d1ee; /* the logo's water: action buttons */
+  --kertas: #ffffff;
+  --garis: #e6dcc6;
+  --redup: #545c7a;
   --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
 }
 
@@ -23,7 +23,7 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 72px;
+  scroll-padding-top: 96px;
   -webkit-text-size-adjust: 100%;
 }
 
@@ -35,8 +35,8 @@ html {
 
 body {
   margin: 0;
-  background: var(--air);
-  color: var(--ink);
+  background: var(--krem);
+  color: var(--navy);
   font: 400 1.0625rem/1.6 var(--font);
 }
 
@@ -48,12 +48,14 @@ p {
 }
 
 a {
-  color: var(--tide);
-  text-underline-offset: 3px;
+  color: var(--navy);
+  text-decoration-color: var(--tan);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
 }
 
 :focus-visible {
-  outline: 3px solid var(--sun);
+  outline: 3px solid var(--tan);
   outline-offset: 3px;
 }
 
@@ -73,7 +75,7 @@ a {
   top: 12px;
   z-index: 10;
   padding: 8px 14px;
-  background: var(--paper);
+  background: var(--kertas);
 }
 
 /* Preview only: content still to be filled in konten.json. */
@@ -93,16 +95,17 @@ mark.isi {
   gap: 10px;
   min-height: 52px;
   padding: 12px 22px;
-  border: 2px solid var(--sun);
+  border: 2px solid var(--biru);
   border-radius: 999px;
-  background: var(--sun);
-  color: var(--ink);
+  background: var(--biru);
+  color: var(--navy);
   font-weight: 700;
   text-decoration: none;
 }
 
 .tombol:hover {
-  background: #ffd75c;
+  background: #c8e0f5;
+  border-color: #c8e0f5;
 }
 
 .tombol--garis {
@@ -112,13 +115,22 @@ mark.isi {
 }
 
 .tombol--garis:hover {
-  background: rgba(255, 255, 255, 0.12);
+  background: rgba(178, 209, 238, 0.18);
+  border-color: currentColor;
 }
 
 .tombol--kecil {
-  min-height: 40px;
+  min-height: 42px;
   padding: 6px 16px;
   font-size: 0.95rem;
+  background: var(--navy);
+  border-color: var(--navy);
+  color: var(--krem);
+}
+
+.tombol--kecil:hover {
+  background: var(--navy-dalam);
+  border-color: var(--navy-dalam);
 }
 
 .tombol-baris {
@@ -133,8 +145,8 @@ mark.isi {
   position: sticky;
   top: 0;
   z-index: 5;
-  background: var(--tide);
-  color: var(--paper);
+  background: var(--krem);
+  border-bottom: 1px solid var(--garis);
 }
 
 .atas__dalam {
@@ -142,31 +154,24 @@ mark.isi {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: 10px 20px;
+  padding: 8px 20px;
 }
 
-.merek {
-  color: var(--paper);
-  font-size: 1.35rem;
-  font-weight: 800;
-  letter-spacing: -0.03em;
-  text-decoration: none;
-}
-
-.merek span {
-  color: var(--sun);
+.merek img {
+  display: block;
+  width: 150px;
+  height: auto;
 }
 
 .atas nav {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 22px;
 }
 
 .atas nav a:not(.tombol) {
-  color: var(--paper);
   font-weight: 500;
   text-decoration: none;
 }
@@ -179,34 +184,34 @@ mark.isi {
 
 .pembuka {
   position: relative;
-  background: var(--tide);
-  color: var(--paper);
+  background: var(--navy);
+  color: var(--krem);
 }
 
 .pembuka__dalam {
   display: grid;
   gap: 24px;
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
-  padding: clamp(40px, 9vw, 104px) 20px clamp(80px, 12vw, 140px);
+  padding: clamp(44px, 9vw, 104px) 20px clamp(96px, 13vw, 160px);
 }
 
 .pembuka h1 {
   max-width: 14ch;
   font-size: clamp(2.5rem, 1.2rem + 5.6vw, 5rem);
   font-weight: 800;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  line-height: 1.02;
+  letter-spacing: -0.035em;
 }
 
 .pembuka__isi {
-  max-width: 46ch;
+  max-width: 48ch;
   font-size: 1.2rem;
-  color: #dcefed;
+  color: #d6dcef;
 }
 
 .pembuka .tombol--garis {
-  color: var(--paper);
+  color: var(--krem);
 }
 
 .ombak {
@@ -214,8 +219,15 @@ mark.isi {
   left: 0;
   bottom: -1px;
   width: 100%;
-  height: clamp(36px, 6vw, 90px);
-  fill: var(--air);
+  height: clamp(44px, 7vw, 110px);
+}
+
+.ombak__biru {
+  fill: var(--biru);
+}
+
+.ombak__krem {
+  fill: var(--krem);
 }
 
 /* --- Sections ------------------------------------------------------------ */
@@ -223,7 +235,7 @@ mark.isi {
 .bagian {
   display: grid;
   gap: 28px;
-  max-width: 1080px;
+  max-width: 1120px;
   margin: 0 auto;
   padding: clamp(44px, 7vw, 80px) 20px;
 }
@@ -235,22 +247,37 @@ mark.isi {
   line-height: 1.1;
 }
 
-/* --- The receipt --------------------------------------------------------- */
+/* --- The receipts -------------------------------------------------------- */
 
-.nota-baris {
+.nota-susun {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: minmax(0, 3fr) minmax(0, 2fr);
   gap: 28px;
   align-items: start;
+}
+
+.nota--lebar {
+  grid-column: 1 / -1;
+}
+
+.nota-tumpuk {
+  display: grid;
+  gap: 28px;
+}
+
+@media (max-width: 860px) {
+  .nota-susun {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .nota {
   --gigi: 9px; /* size of the torn teeth at the top and bottom */
   display: grid;
   gap: 18px;
-  padding: calc(var(--gigi) + 24px) 26px calc(var(--gigi) + 24px);
-  background: var(--paper);
-  filter: drop-shadow(0 6px 14px rgba(16, 41, 58, 0.1));
+  padding: calc(var(--gigi) + 24px) 26px;
+  background: var(--kertas);
+  filter: drop-shadow(0 6px 14px rgba(26, 36, 80, 0.1));
   /* Torn paper edge: a row of half circles cut out of the top and bottom. */
   -webkit-mask:
     radial-gradient(circle at 50% 0, transparent calc(var(--gigi) - 0.5px), #000 var(--gigi)) top /
@@ -268,18 +295,19 @@ mark.isi {
 
 .nota h3 {
   display: flex;
+  flex-wrap: wrap;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: 4px 12px;
   padding-bottom: 14px;
-  border-bottom: 2px dashed var(--rule);
+  border-bottom: 2px dashed var(--garis);
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
 
 .nota h3 span {
-  color: var(--muted);
+  color: var(--redup);
   font-size: 0.95rem;
   font-weight: 500;
   letter-spacing: 0;
@@ -287,10 +315,21 @@ mark.isi {
 
 .nota ul {
   display: grid;
-  gap: 14px;
+  gap: 12px;
   margin: 0;
   padding: 0;
   list-style: none;
+}
+
+.nota--dua-kolom ul {
+  display: block;
+  columns: 2 220px;
+  column-gap: 36px;
+}
+
+.nota--dua-kolom li {
+  margin-bottom: 12px;
+  break-inside: avoid;
 }
 
 .nota li {
@@ -300,35 +339,105 @@ mark.isi {
 }
 
 .nota__item {
-  display: grid;
   font-weight: 500;
-}
-
-.nota__item small {
-  color: var(--muted);
-  font-size: 0.875rem;
-  font-weight: 400;
 }
 
 /* Dotted leader between the item and its price, as on a printed price list. */
 .nota__titik {
   flex: 1;
-  min-width: 16px;
-  border-bottom: 2px dotted var(--rule);
+  min-width: 14px;
+  border-bottom: 2px dotted var(--garis);
   transform: translateY(-5px);
 }
 
 .nota__harga {
   font-weight: 800;
   font-variant-numeric: tabular-nums;
-  text-align: right;
+  white-space: nowrap;
 }
 
 .nota__catatan {
   padding-top: 14px;
-  border-top: 2px dashed var(--rule);
-  color: var(--muted);
+  border-top: 2px dashed var(--garis);
+  color: var(--redup);
   font-size: 0.95rem;
+}
+
+.harga__bawah {
+  color: var(--redup);
+}
+
+/* Kiloan: one row per package, regular and member prices side by side. */
+.kilo {
+  width: 100%;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.kilo th,
+.kilo td {
+  padding: 10px 0;
+  text-align: left;
+  vertical-align: baseline;
+}
+
+.kilo td {
+  padding-left: 16px;
+  font-weight: 800;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.kilo thead th {
+  padding-top: 0;
+  color: var(--redup);
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.kilo thead th:not(:first-child) {
+  padding-left: 16px;
+  text-align: right;
+}
+
+.kilo tbody th {
+  font-weight: 500;
+}
+
+.kilo tbody th span {
+  margin-left: 6px;
+  color: var(--redup);
+  font-weight: 400;
+}
+
+.kilo tbody tr + tr th,
+.kilo tbody tr + tr td {
+  border-top: 1px solid #f1ebdc;
+}
+
+.kilo td,
+.kilo thead th:not(:first-child) {
+  width: 8.5rem;
+}
+
+/* The member column is the better deal; a tinted band marks it without shouting. */
+.kilo td:last-child,
+.kilo thead th:last-child {
+  padding-right: 12px;
+  background: #f8f2e3;
+}
+
+.kilo thead th:last-child {
+  color: var(--navy);
+  font-weight: 700;
+}
+
+.kilo__tambahan th[scope="rowgroup"] {
+  padding-top: 22px;
+  color: var(--redup);
+  font-size: 0.875rem;
+  font-weight: 500;
+  border-top: 2px dashed var(--garis);
 }
 
 /* --- Steps --------------------------------------------------------------- */
@@ -347,7 +456,7 @@ mark.isi {
   display: grid;
   gap: 6px;
   align-content: start;
-  color: var(--muted);
+  color: var(--redup);
 }
 
 .langkah li::before {
@@ -359,16 +468,47 @@ mark.isi {
   height: 44px;
   margin-bottom: 8px;
   border-radius: 50%;
-  background: var(--tide);
-  color: var(--paper);
+  background: var(--navy);
+  color: var(--krem);
   font-size: 1.15rem;
   font-weight: 800;
 }
 
 .langkah strong {
-  display: block;
-  color: var(--ink);
+  color: var(--navy);
   font-size: 1.15rem;
+}
+
+/* --- Terms --------------------------------------------------------------- */
+
+.syarat {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 0 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: syarat;
+}
+
+.syarat li {
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  padding: 16px 0;
+  border-top: 1px solid var(--garis);
+}
+
+.syarat li::before {
+  counter-increment: syarat;
+  content: counter(syarat);
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  background: var(--navy);
+  color: var(--krem);
+  font-weight: 800;
 }
 
 /* --- Location ------------------------------------------------------------ */
@@ -392,18 +532,10 @@ mark.isi {
   font-weight: 500;
 }
 
-.lokasi .tombol--garis {
-  color: var(--tide);
-}
-
-.lokasi .tombol--garis:hover {
-  background: var(--paper);
-}
-
 .jam {
   width: 100%;
   border-collapse: collapse;
-  background: var(--paper);
+  background: var(--kertas);
   border-radius: 12px;
   overflow: hidden;
 }
@@ -417,7 +549,7 @@ mark.isi {
 .jam th,
 .jam td {
   padding: 14px 18px;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--garis);
   text-align: left;
 }
 
@@ -440,11 +572,11 @@ mark.isi {
 .tanya {
   display: grid;
   max-width: 760px;
-  border-top: 1px solid var(--rule);
+  border-top: 1px solid var(--garis);
 }
 
 .tanya details {
-  border-bottom: 1px solid var(--rule);
+  border-bottom: 1px solid var(--garis);
 }
 
 .tanya summary {
@@ -463,8 +595,9 @@ mark.isi {
 
 .tanya summary::after {
   content: "+";
-  color: var(--tide);
-  font-size: 1.4rem;
+  color: var(--tan);
+  font-size: 1.5rem;
+  font-weight: 500;
   line-height: 1;
 }
 
@@ -475,7 +608,7 @@ mark.isi {
 .tanya details p {
   max-width: 62ch;
   padding-bottom: 20px;
-  color: var(--muted);
+  color: var(--redup);
 }
 
 /* --- Footer and floating button ------------------------------------------ */
@@ -484,17 +617,17 @@ mark.isi {
   display: grid;
   gap: 6px;
   padding: 36px 20px 112px;
-  background: var(--tide-deep);
-  color: #cfe5e3;
+  background: var(--navy);
+  color: #c9d0e6;
   text-align: center;
 }
 
 .bawah strong {
-  color: var(--paper);
+  color: var(--krem);
 }
 
 .bawah a {
-  color: var(--sun);
+  color: var(--biru);
 }
 
 /* On phones the order button stays within thumb reach. */
@@ -509,11 +642,11 @@ mark.isi {
   min-height: 56px;
   padding: 0 22px;
   border-radius: 999px;
-  background: var(--sun);
-  color: var(--ink);
+  background: var(--navy);
+  color: var(--krem);
   font-weight: 800;
   text-decoration: none;
-  box-shadow: 0 8px 20px rgba(16, 41, 58, 0.25);
+  box-shadow: 0 8px 20px rgba(26, 36, 80, 0.3);
 }
 
 @media (max-width: 640px) {
@@ -521,12 +654,36 @@ mark.isi {
     display: none;
   }
 
+  .merek img {
+    width: 120px;
+  }
+
   .wa-melayang {
     display: inline-flex;
   }
 
   .nota {
-    padding-inline: 20px;
+    padding-inline: 18px;
+  }
+
+  .kilo {
+    font-size: 0.95rem;
+  }
+
+  .kilo td,
+  .kilo thead th:not(:first-child) {
+    width: auto;
+    padding-left: 10px;
+  }
+
+  .kilo td:last-child,
+  .kilo thead th:last-child {
+    padding-right: 8px;
+  }
+
+  .kilo tbody th span {
+    display: block;
+    margin-left: 0;
   }
 }
 

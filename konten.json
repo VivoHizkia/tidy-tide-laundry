@@ -2,7 +2,7 @@
   "nama": "Tidy Tide Laundry",
   "alamatSitus": "ISI: alamat situs lengkap, misalnya https://tidytidelaundry.com",
   "area": "ISI: nama daerah, misalnya Bintaro, Tangerang Selatan",
-  "whatsapp": "ISI: nomor WhatsApp dengan kode negara tanpa + atau spasi, misalnya 6281234567890",
+  "whatsapp": "628131783862",
   "pesanWhatsapp": "Halo Tidy Tide, saya mau laundry.",
   "alamat": "ISI: alamat lengkap toko",
   "linkPeta": "ISI: link Google Maps toko, dari tombol Bagikan di Google Maps",
@@ -10,36 +10,93 @@
     { "hari": "Senin sampai Sabtu", "jam": "ISI: misalnya 07.00 sampai 21.00" },
     { "hari": "Minggu", "jam": "ISI: misalnya 08.00 sampai 17.00, atau Tutup" }
   ],
-  "antarJemput": "ISI: aturan antar-jemput, misalnya Gratis antar-jemput dalam radius 3 km untuk cucian minimal 5 kg.",
-  "kiloan": [
-    { "layanan": "Cuci, kering, setrika", "waktu": "ISI: misalnya 3 hari", "harga": "ISI: misalnya Rp 8.000" },
-    { "layanan": "Cuci, kering, lipat", "waktu": "ISI: misalnya 2 hari", "harga": "ISI: misalnya Rp 6.000" },
-    { "layanan": "Ekspres, cuci sampai setrika", "waktu": "ISI: misalnya 1 hari", "harga": "ISI: misalnya Rp 12.000" }
-  ],
-  "catatanKiloan": "ISI: misalnya Minimal 3 kg. Harga per kilogram.",
+  "antarJemput": "Gratis antar-jemput.",
+  "lamaPengerjaan": "ISI: lama pengerjaan, misalnya Selesai dalam 2 sampai 3 hari.",
+
+  "kiloan": {
+    "catatan": "Harga per paket. Cuci kering lipat dan cuci kering setrika.",
+    "paket": [
+      { "layanan": "Cuci kering lipat", "berat": "3 kg", "reguler": "Rp 36.000", "member": "Rp 34.000" },
+      { "layanan": "Cuci kering setrika", "berat": "3 kg", "reguler": "Rp 45.000", "member": "Rp 43.000" },
+      { "layanan": "Cuci kering lipat", "berat": "6 kg", "reguler": "Rp 66.000", "member": "Rp 64.000" },
+      { "layanan": "Cuci kering setrika", "berat": "6 kg", "reguler": "Rp 84.000", "member": "Rp 82.000" },
+      { "layanan": "Setrika saja", "berat": "per kg", "reguler": "Rp 7.000", "member": "Rp 6.000" }
+    ],
+    "tambahan": [
+      { "layanan": "Tambahan cuci kering lipat", "berat": "per kg", "reguler": "Rp 12.000", "member": "Rp 11.500" },
+      { "layanan": "Tambahan cuci kering setrika", "berat": "per kg", "reguler": "Rp 15.000", "member": "Rp 14.500" }
+    ],
+    "caraMember": "ISI: cara menjadi member, misalnya Daftar gratis di kasir, atau hapus baris ini kalau tidak perlu dijelaskan."
+  },
+
   "satuan": [
-    { "layanan": "Bed cover", "harga": "ISI: misalnya Rp 35.000" },
-    { "layanan": "Selimut", "harga": "ISI: misalnya Rp 25.000" },
-    { "layanan": "Jas atau blazer", "harga": "ISI: misalnya Rp 30.000" },
-    { "layanan": "Sepatu", "harga": "ISI: misalnya Rp 40.000 per pasang" },
-    { "layanan": "Gorden", "harga": "ISI: misalnya Rp 15.000 per kg" }
+    { "layanan": "Kaos", "harga": "Rp 32.000" },
+    { "layanan": "Kemeja", "harga": "Rp 37.000" },
+    { "layanan": "Kemeja batik", "harga": "Rp 37.000" },
+    { "layanan": "Blouse", "harga": "Rp 37.000" },
+    { "layanan": "Safari, atasan", "harga": "Rp 37.000" },
+    { "layanan": "Safari, stelan", "harga": "Rp 62.000" },
+    { "layanan": "Rompi", "harga": "Rp 27.000" },
+    { "layanan": "Sweater", "harga": "Rp 37.000" },
+    { "layanan": "Jaket kain", "harga": "Rp 27.000" },
+    { "layanan": "Jaket tebal", "harga": "Rp 42.000" },
+    { "layanan": "Blazer, atasan", "harga": "Rp 32.000" },
+    { "layanan": "Blazer, stelan", "harga": "Rp 57.000" },
+    { "layanan": "Dasi", "harga": "Rp 12.000" },
+    { "layanan": "Celana panjang kain", "harga": "Rp 37.000" },
+    { "layanan": "Celana panjang jeans", "harga": "Rp 47.000" },
+    { "layanan": "Celana pendek kain", "harga": "Rp 27.000" },
+    { "layanan": "Celana pendek jeans", "harga": "Rp 37.000" },
+    { "layanan": "Rok pendek kain", "harga": "Rp 27.000" },
+    { "layanan": "Rok pendek jeans", "harga": "Rp 37.000" },
+    { "layanan": "Rok panjang kain", "harga": "Rp 47.000" },
+    { "layanan": "Rok panjang jeans", "harga": "Rp 62.000" }
   ],
+
+  "linen": [
+    { "layanan": "Bed cover S, 120 x 200 cm", "harga": "Rp 32.000" },
+    { "layanan": "Bed cover M, 160 x 200 cm", "harga": "Rp 42.000" },
+    { "layanan": "Bed cover L, 180 x 200 cm", "harga": "Rp 52.000" },
+    { "layanan": "Bed cover XL, 220 x 200 cm", "harga": "Rp 62.000" },
+    { "layanan": "Bed cover bulu angsa", "harga": "Rp 102.000" },
+    { "layanan": "Sprei", "harga": "Rp 22.000" },
+    { "layanan": "Sprei set single", "harga": "Rp 32.000" },
+    { "layanan": "Sprei set double", "harga": "Rp 37.000" },
+    { "layanan": "Selimut, semua ukuran", "harga": "Rp 32.000" },
+    { "layanan": "Handuk", "harga": "Rp 22.000" }
+  ],
+
+  "sepatu": [
+    { "layanan": "Sandal pria", "harga": "Rp 32.000" },
+    { "layanan": "Sandal wanita", "harga": "Rp 47.000" },
+    { "layanan": "Sepatu kanvas", "harga": "Rp 52.000" }
+  ],
+
+  "syarat": [
+    "Beri tahu kasir atau kurir jika ada pakaian yang mudah luntur, rapuh, sobek, berwarna putih, atau batik. Jika tidak diberi tahu, kami tidak bertanggung jawab atas kerusakannya.",
+    "Untuk hasil terbaik, kami sarankan cuci satuan.",
+    "Pakaian yang tidak diambil dalam 30 hari bukan lagi tanggung jawab kami.",
+    "Keluhan disampaikan paling lambat 24 jam setelah cucian diterima. Lewat dari itu, kami tidak dapat bertanggung jawab.",
+    "Kami tidak bertanggung jawab atas barang yang tertinggal di saku pakaian. Periksa saku sebelum menyerahkan cucian, dan beri tahu kasir jika ada barang yang tertinggal.",
+    "Kami tidak menerima cucian bra."
+  ],
+
   "tanyaJawab": [
     {
-      "tanya": "Bagaimana kalau ada pakaian yang rusak atau hilang?",
-      "jawab": "ISI: kebijakan ganti rugi, misalnya Kami ganti maksimal 10 kali ongkos cuci barang tersebut."
-    },
-    {
-      "tanya": "Apakah pakaian putih dan berwarna dicuci terpisah?",
-      "jawab": "ISI: jawaban Anda"
+      "tanya": "Berapa lama cucian selesai?",
+      "jawab": "ISI: lama pengerjaan reguler, dan apakah ada layanan kilat."
     },
     {
       "tanya": "Bisa bayar pakai apa?",
       "jawab": "ISI: misalnya Tunai, transfer bank, dan QRIS."
     },
     {
-      "tanya": "Kapan cucian saya bisa diambil?",
-      "jawab": "ISI: misalnya Kami kirim pesan WhatsApp begitu cucian selesai. Waktu pengerjaan ada di daftar harga."
+      "tanya": "Sampai mana antar-jemput gratisnya?",
+      "jawab": "ISI: jangkauan antar-jemput gratis, misalnya radius 3 km dari toko."
+    },
+    {
+      "tanya": "Ke mana saya menyampaikan keluhan?",
+      "jawab": "Hubungi customer service kami lewat WhatsApp di 0813 1783 862, paling lambat 24 jam setelah cucian diterima."
     }
   ]
 }

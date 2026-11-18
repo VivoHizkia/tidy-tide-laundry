@@ -4,7 +4,7 @@ Situs satu halaman untuk Tidy Tide Laundry: harga kiloan dan satuan, cara pesan,
 
 ## Mengubah isi
 
-Semua isi ada di **`konten.json`**: harga, alamat, jam buka, nomor WhatsApp, dan tanya jawab. Tampilan ada di `src/style.css`, susunan halaman di `build.mjs`.
+Semua isi ada di **`konten.json`**: harga, alamat, jam buka, nomor WhatsApp, dan tanya jawab. Tampilan ada di `src/style.css`, susunan halaman di `build.mjs`, dan logo di `src/` (`logo-480.png`, `logo-960.png`, `favicon.png`, `apple-touch-icon.png`).
 
 Bagian yang diawali `ISI:` belum diisi. Selama masih ada, perintah `node build.mjs` berhenti dan menyebut bagian mana saja, supaya harga contoh tidak pernah terpasang ke publik.
 

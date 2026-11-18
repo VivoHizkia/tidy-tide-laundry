@@ -1,0 +1,537 @@
+/* Tidy Tide Laundry
+   Two ideas carry the page: the tide (the teal opening with its wave edge) and the laundry
+   receipt (the price list printed as a nota with a torn edge and dotted leaders).
+   Everything else stays quiet. */
+
+:root {
+  --air: #eef5f4; /* page background, the colour of clean water */
+  --tide: #17707a; /* brand teal */
+  --tide-deep: #0f525a;
+  --ink: #10293a; /* text */
+  --muted: #4a6270;
+  --sun: #f4c543; /* the one warm accent: action buttons */
+  --paper: #ffffff;
+  --rule: #cfe0de;
+  --font: "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--air);
+  color: var(--ink);
+  font: 400 1.0625rem/1.6 var(--font);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--tide);
+  text-underline-offset: 3px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--sun);
+  outline-offset: 3px;
+}
+
+.ikon {
+  width: 1.2em;
+  height: 1.2em;
+  flex: none;
+}
+
+.lewati {
+  position: absolute;
+  left: -9999px;
+}
+
+.lewati:focus {
+  left: 16px;
+  top: 12px;
+  z-index: 10;
+  padding: 8px 14px;
+  background: var(--paper);
+}
+
+/* Preview only: content still to be filled in konten.json. */
+mark.isi {
+  background: #ffe98a;
+  color: #5a4300;
+  padding: 0 4px;
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+/* --- Buttons ------------------------------------------------------------- */
+
+.tombol {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  min-height: 52px;
+  padding: 12px 22px;
+  border: 2px solid var(--sun);
+  border-radius: 999px;
+  background: var(--sun);
+  color: var(--ink);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.tombol:hover {
+  background: #ffd75c;
+}
+
+.tombol--garis {
+  background: transparent;
+  border-color: currentColor;
+  color: inherit;
+}
+
+.tombol--garis:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.tombol--kecil {
+  min-height: 40px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+}
+
+.tombol-baris {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --- Header -------------------------------------------------------------- */
+
+.atas {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: var(--tide);
+  color: var(--paper);
+}
+
+.atas__dalam {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 10px 20px;
+}
+
+.merek {
+  color: var(--paper);
+  font-size: 1.35rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+}
+
+.merek span {
+  color: var(--sun);
+}
+
+.atas nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.atas nav a:not(.tombol) {
+  color: var(--paper);
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.atas nav a:not(.tombol):hover {
+  text-decoration: underline;
+}
+
+/* --- Opening ------------------------------------------------------------- */
+
+.pembuka {
+  position: relative;
+  background: var(--tide);
+  color: var(--paper);
+}
+
+.pembuka__dalam {
+  display: grid;
+  gap: 24px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(40px, 9vw, 104px) 20px clamp(80px, 12vw, 140px);
+}
+
+.pembuka h1 {
+  max-width: 14ch;
+  font-size: clamp(2.5rem, 1.2rem + 5.6vw, 5rem);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.pembuka__isi {
+  max-width: 46ch;
+  font-size: 1.2rem;
+  color: #dcefed;
+}
+
+.pembuka .tombol--garis {
+  color: var(--paper);
+}
+
+.ombak {
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(36px, 6vw, 90px);
+  fill: var(--air);
+}
+
+/* --- Sections ------------------------------------------------------------ */
+
+.bagian {
+  display: grid;
+  gap: 28px;
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(44px, 7vw, 80px) 20px;
+}
+
+.bagian h2 {
+  font-size: clamp(1.75rem, 1.2rem + 2vw, 2.5rem);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+/* --- The receipt --------------------------------------------------------- */
+
+.nota-baris {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.nota {
+  --gigi: 9px; /* size of the torn teeth at the top and bottom */
+  display: grid;
+  gap: 18px;
+  padding: calc(var(--gigi) + 24px) 26px calc(var(--gigi) + 24px);
+  background: var(--paper);
+  filter: drop-shadow(0 6px 14px rgba(16, 41, 58, 0.1));
+  /* Torn paper edge: a row of half circles cut out of the top and bottom. */
+  -webkit-mask:
+    radial-gradient(circle at 50% 0, transparent calc(var(--gigi) - 0.5px), #000 var(--gigi)) top /
+      calc(var(--gigi) * 2) var(--gigi) repeat-x,
+    linear-gradient(#000, #000) center / 100% calc(100% - var(--gigi) * 2) no-repeat,
+    radial-gradient(circle at 50% 100%, transparent calc(var(--gigi) - 0.5px), #000 var(--gigi))
+      bottom / calc(var(--gigi) * 2) var(--gigi) repeat-x;
+  mask:
+    radial-gradient(circle at 50% 0, transparent calc(var(--gigi) - 0.5px), #000 var(--gigi)) top /
+      calc(var(--gigi) * 2) var(--gigi) repeat-x,
+    linear-gradient(#000, #000) center / 100% calc(100% - var(--gigi) * 2) no-repeat,
+    radial-gradient(circle at 50% 100%, transparent calc(var(--gigi) - 0.5px), #000 var(--gigi))
+      bottom / calc(var(--gigi) * 2) var(--gigi) repeat-x;
+}
+
+.nota h3 {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding-bottom: 14px;
+  border-bottom: 2px dashed var(--rule);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.nota h3 span {
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: 0;
+}
+
+.nota ul {
+  display: grid;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.nota li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.nota__item {
+  display: grid;
+  font-weight: 500;
+}
+
+.nota__item small {
+  color: var(--muted);
+  font-size: 0.875rem;
+  font-weight: 400;
+}
+
+/* Dotted leader between the item and its price, as on a printed price list. */
+.nota__titik {
+  flex: 1;
+  min-width: 16px;
+  border-bottom: 2px dotted var(--rule);
+  transform: translateY(-5px);
+}
+
+.nota__harga {
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.nota__catatan {
+  padding-top: 14px;
+  border-top: 2px dashed var(--rule);
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+/* --- Steps --------------------------------------------------------------- */
+
+.langkah {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: langkah;
+}
+
+.langkah li {
+  display: grid;
+  gap: 6px;
+  align-content: start;
+  color: var(--muted);
+}
+
+.langkah li::before {
+  counter-increment: langkah;
+  content: counter(langkah);
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 8px;
+  border-radius: 50%;
+  background: var(--tide);
+  color: var(--paper);
+  font-size: 1.15rem;
+  font-weight: 800;
+}
+
+.langkah strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1.15rem;
+}
+
+/* --- Location ------------------------------------------------------------ */
+
+.lokasi__isi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.lokasi__isi > div {
+  display: grid;
+  gap: 18px;
+  justify-items: start;
+}
+
+.lokasi__alamat {
+  max-width: 34ch;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.lokasi .tombol--garis {
+  color: var(--tide);
+}
+
+.lokasi .tombol--garis:hover {
+  background: var(--paper);
+}
+
+.jam {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--paper);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.jam caption {
+  padding-bottom: 10px;
+  font-weight: 700;
+  text-align: left;
+}
+
+.jam th,
+.jam td {
+  padding: 14px 18px;
+  border-top: 1px solid var(--rule);
+  text-align: left;
+}
+
+.jam tr:first-child th,
+.jam tr:first-child td {
+  border-top: 0;
+}
+
+.jam th {
+  font-weight: 500;
+}
+
+.jam td {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+/* --- Questions ----------------------------------------------------------- */
+
+.tanya {
+  display: grid;
+  max-width: 760px;
+  border-top: 1px solid var(--rule);
+}
+
+.tanya details {
+  border-bottom: 1px solid var(--rule);
+}
+
+.tanya summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 0;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+.tanya summary::-webkit-details-marker {
+  display: none;
+}
+
+.tanya summary::after {
+  content: "+";
+  color: var(--tide);
+  font-size: 1.4rem;
+  line-height: 1;
+}
+
+.tanya details[open] summary::after {
+  content: "\2212";
+}
+
+.tanya details p {
+  max-width: 62ch;
+  padding-bottom: 20px;
+  color: var(--muted);
+}
+
+/* --- Footer and floating button ------------------------------------------ */
+
+.bawah {
+  display: grid;
+  gap: 6px;
+  padding: 36px 20px 112px;
+  background: var(--tide-deep);
+  color: #cfe5e3;
+  text-align: center;
+}
+
+.bawah strong {
+  color: var(--paper);
+}
+
+.bawah a {
+  color: var(--sun);
+}
+
+/* On phones the order button stays within thumb reach. */
+.wa-melayang {
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  z-index: 6;
+  display: none;
+  align-items: center;
+  gap: 8px;
+  min-height: 56px;
+  padding: 0 22px;
+  border-radius: 999px;
+  background: var(--sun);
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  box-shadow: 0 8px 20px rgba(16, 41, 58, 0.25);
+}
+
+@media (max-width: 640px) {
+  .atas nav a:not(.tombol) {
+    display: none;
+  }
+
+  .wa-melayang {
+    display: inline-flex;
+  }
+
+  .nota {
+    padding-inline: 20px;
+  }
+}
+
+@media (min-width: 641px) {
+  .bawah {
+    padding-bottom: 40px;
+  }
+}

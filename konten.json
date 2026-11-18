@@ -1,0 +1,45 @@
+{
+  "nama": "Tidy Tide Laundry",
+  "alamatSitus": "ISI: alamat situs lengkap, misalnya https://tidytidelaundry.com",
+  "area": "ISI: nama daerah, misalnya Bintaro, Tangerang Selatan",
+  "whatsapp": "ISI: nomor WhatsApp dengan kode negara tanpa + atau spasi, misalnya 6281234567890",
+  "pesanWhatsapp": "Halo Tidy Tide, saya mau laundry.",
+  "alamat": "ISI: alamat lengkap toko",
+  "linkPeta": "ISI: link Google Maps toko, dari tombol Bagikan di Google Maps",
+  "jamBuka": [
+    { "hari": "Senin sampai Sabtu", "jam": "ISI: misalnya 07.00 sampai 21.00" },
+    { "hari": "Minggu", "jam": "ISI: misalnya 08.00 sampai 17.00, atau Tutup" }
+  ],
+  "antarJemput": "ISI: aturan antar-jemput, misalnya Gratis antar-jemput dalam radius 3 km untuk cucian minimal 5 kg.",
+  "kiloan": [
+    { "layanan": "Cuci, kering, setrika", "waktu": "ISI: misalnya 3 hari", "harga": "ISI: misalnya Rp 8.000" },
+    { "layanan": "Cuci, kering, lipat", "waktu": "ISI: misalnya 2 hari", "harga": "ISI: misalnya Rp 6.000" },
+    { "layanan": "Ekspres, cuci sampai setrika", "waktu": "ISI: misalnya 1 hari", "harga": "ISI: misalnya Rp 12.000" }
+  ],
+  "catatanKiloan": "ISI: misalnya Minimal 3 kg. Harga per kilogram.",
+  "satuan": [
+    { "layanan": "Bed cover", "harga": "ISI: misalnya Rp 35.000" },
+    { "layanan": "Selimut", "harga": "ISI: misalnya Rp 25.000" },
+    { "layanan": "Jas atau blazer", "harga": "ISI: misalnya Rp 30.000" },
+    { "layanan": "Sepatu", "harga": "ISI: misalnya Rp 40.000 per pasang" },
+    { "layanan": "Gorden", "harga": "ISI: misalnya Rp 15.000 per kg" }
+  ],
+  "tanyaJawab": [
+    {
+      "tanya": "Bagaimana kalau ada pakaian yang rusak atau hilang?",
+      "jawab": "ISI: kebijakan ganti rugi, misalnya Kami ganti maksimal 10 kali ongkos cuci barang tersebut."
+    },
+    {
+      "tanya": "Apakah pakaian putih dan berwarna dicuci terpisah?",
+      "jawab": "ISI: jawaban Anda"
+    },
+    {
+      "tanya": "Bisa bayar pakai apa?",
+      "jawab": "ISI: misalnya Tunai, transfer bank, dan QRIS."
+    },
+    {
+      "tanya": "Kapan cucian saya bisa diambil?",
+      "jawab": "ISI: misalnya Kami kirim pesan WhatsApp begitu cucian selesai. Waktu pengerjaan ada di daftar harga."
+    }
+  ]
+}

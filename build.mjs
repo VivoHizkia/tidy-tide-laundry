@@ -76,6 +76,7 @@ const structuredData = {
   address: plain(k.alamat) || undefined,
   hasMap: plain(k.linkPeta) || undefined,
   areaServed: area || undefined,
+  openingHours: k.jamBukaGoogle,
   priceRange: "Rp 7.000 sampai Rp 102.000",
 };
 
